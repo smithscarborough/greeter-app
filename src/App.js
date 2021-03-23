@@ -1,25 +1,28 @@
-import logo from './logo.svg';
 import './App.css';
+import Greeter from './components/Greeter';
+import Timestamp from './components/Timestamp';
+
+const spiceGirls = [
+  'Melanie',
+  'Emma',
+  'Mel B',
+  'Geri',
+  'Victoria'
+]
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Timestamp />
+    <h1 class="greeting">Hello React!</h1>
+    {
+      spiceGirls.map((girl, index) => {
+        return <Greeter name={girl} key={index} />
+      })
+    }
     </div>
   );
 }
 
 export default App;
+
